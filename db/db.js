@@ -5,19 +5,20 @@ dotenv.config()
 const host = process.env.HOST;
 const username=process.env.DB_USER;
 const password=process.env.DB_PASS;
-const db_name=process.env.DB_NAME
+const db_name=process.env.DB_NAME;
+const db_port=process.env.DB_PORT
 
 
 const dbConnect = async (next) => {
   console.log("database:",host,username,password,db_name)
     const pool= await mysql.createPool({
       connectionLimit: 10,
-      acquireTimeout: 60000, //30 secs
+      acquireTimeout: 30000, //30 secs
       host: host,
       user: username,
       password: password,
-      database: db_name,
-      // port: 3306,
+      database: db_name
+      // port: db_port,
       // dialect: 'mysql',
       
     });
