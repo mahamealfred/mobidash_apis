@@ -6,15 +6,6 @@ import dbConnect from "./db/db.js";
 const app=express();
 dotenv.config()
 
-// const host = process.env.HOST;
-// const username=process.env.DB_USER;
-// const password=process.env.DB_PASS;
-// const db_name=process.env.DB_NAME
- 
-
-//   console.log(` connected on MySql.`);
-// };
-
 //middleware
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json())
