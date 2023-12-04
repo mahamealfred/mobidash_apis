@@ -1,9 +1,9 @@
-//import dbConnect from "../db/db.js";
+import dbConnect from "../db/db.js";
 import { createError } from "../utils/error.js";
 import axios from "axios";
 
-// const con=dbConnect;
-const con=0
+const con=dbConnect;
+//const con=0
 export const deposits=async(req,res,next)=>{
     try {
         const q="SELECT * FROM deposit_logs ORDER BY id DESC LIMIT";

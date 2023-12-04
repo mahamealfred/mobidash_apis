@@ -2,7 +2,7 @@ import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
 import routes from "./routes/index.js"
-//import dbConnect from "./db/db.js";
+import dbConnect from "./db/db.js";
 const app=express();
 dotenv.config()
 
@@ -26,6 +26,6 @@ app.use((err,req,res,next)=>{
   })
 })
 app.listen(8000,()=>{
-    //dbConnect
+    dbConnect
     console.log("Connected to Backend.");
 });
